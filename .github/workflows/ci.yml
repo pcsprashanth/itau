@@ -87,7 +87,6 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      if: github.event_name == 'pull_request'
       run: terraform plan -no-color
       working-directory: ${{ env.TF_WORKING_DIR }}
       continue-on-error: true
