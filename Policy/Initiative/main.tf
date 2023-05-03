@@ -6,7 +6,7 @@ provider "azurerm" {
   required_providers {
       azurerm = {
           source = "hashicorp/azurerm"
-          version = ">=3.23.0"
+          version = ">=1.42.0"
       }
     }
   }
