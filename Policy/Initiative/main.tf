@@ -1,16 +1,15 @@
-terraform {
-  required_providers {
-      azurerm = {
-          source = "hashicorp/azurerm"
-          version = "3.54.0"
-      }
-    }
-  }
-
 provider "azurerm" {
     features {}
 }
 
+terraform {
+  required_providers {
+      azurerm = {
+          source = "hashicorp/azurerm"
+          version = ">= 2.42.0"
+      }
+    }
+  }
 
   resource "azurerm_subscription_policy_assignment" "asb" {
   name = "Azure-Security-BenchMark"
