@@ -8,7 +8,7 @@ provider "azurerm" {
           source = "hashicorp/azurerm"
           version = ">= 2.96.0"
       }
-  }
+    }
   }
 
   resource "azurerm_subscription_policy_assignment" "asb" {
