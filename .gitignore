@@ -7,7 +7,6 @@
 *.plan
 *.auto.tfvars
 lock.json
-.terraform.lock.hcl
 override.tf
 override.tf.json
 *_override.tf

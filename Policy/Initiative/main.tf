@@ -1,8 +1,4 @@
-provider "azurerm" {
-    features {}
-  }
-
-  terraform {
+terraform {
   required_providers {
       azurerm = {
           source = "hashicorp/azurerm"
@@ -10,6 +6,11 @@ provider "azurerm" {
       }
     }
   }
+
+provider "azurerm" {
+    features {}
+}
+
 
   resource "azurerm_subscription_policy_assignment" "asb" {
   name = "Azure-Security-BenchMark"
