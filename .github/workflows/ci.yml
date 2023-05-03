@@ -52,16 +52,17 @@ on:
         - "Policy/*"
 
 jobs:
-  ci:
+  build-and-deploy:
+    runs-on: ubuntu-latest
     env:
       TF_IN_AUTOMATION: true
       TF_INPUT: false
-      TF_WORKING_DIR: Policy/Initiative
+      TF_WORKING_DIR: newpolicy2
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      runs-on: ubuntu-latest
+    
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
