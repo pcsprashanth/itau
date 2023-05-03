@@ -80,8 +80,7 @@ ci:
     # Checks that all Terraform configuration files adhere to a canonical format
     
     - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
+      run: terraform validate -no-color
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
