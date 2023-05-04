@@ -99,7 +99,7 @@ jobs:
         - name: Terraform Apply
           if: ${{ success() }}
           run: terraform apply
-          working-directory: Policy
+          working-directory: /Policy/Initiatives
 
         - name: Azure Login
           uses: azure/login@v1
