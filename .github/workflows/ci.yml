@@ -75,6 +75,7 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
         - name: Terraform Init
           run: terraform init
+          working-directory: ${{ env.TF_WORKING_DIR }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
         - name: Terraform Format
@@ -99,7 +100,7 @@ jobs:
         - name: Terraform Apply
           if: ${{ success() }}
           run: terraform apply
-          working-directory: /Policy/Initiatives
+          working-directory: ${{ env.TF_WORKING_DIR }}
 
         - name: Azure Login
           uses: azure/login@v1
@@ -107,5 +108,3 @@ jobs:
           with:
            creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
            enable-AzPSSession: true
-
-
