@@ -1,7 +1,7 @@
-output "assignment_id" {
+output "asb_assignment_id" {
   value = azurerm_subscription_policy_assignment.asb.id
 }
 
-output "gcpvm_assignment_id" {
-  value = azurerm_subscription_policy_assignment.cismaf.id
+output "azuremonitorVMs_assignment_id" {
+  value = azurerm_subscription_policy_assignment.azuremonitorVMs.id
 }

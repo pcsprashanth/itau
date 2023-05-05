@@ -19,13 +19,10 @@ resource "azurerm_subscription_policy_assignment" "asb" {
   display_name         = "Azure Security Benchmark"
 }
 
-
-
-resource "azurerm_subscription_policy_assignment" "cismaf" {
-  name                 = "CIS-Microsoft-Azure"
+resource "azurerm_subscription_policy_assignment" "azuremonitorVMs" {
+  name                 = "azuremonitorvm"
   subscription_id      = var.cust_scope
-  policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/1a5bb27d-173f-493e-9568-eb56638dde4d"
-  description          = "This initiative adds a system-assigned managed identity and deploys the platform-appropriate Guest Configuration extension to virtual machines that are eligible to be monitored by Guest Configuration policies. This is a prerequisite for all Guest Configuration policies and must be assigned to the policy assignment scope before using any Guest Configuration policy. For more information on Guest Configuration, visit https://aka.ms/gcpol."
-  display_name         = "CIS Microsoft Azure Foundations Benchmark v1.1.0"
+  policy_definition_id = "/providers/Microsoft.Authorization/policySetDefinitions/9dffaf29-5905-4145-883c-957eb442c226"
+  description          = "Enable Azure Monitor for the virtual machines (VMs) with AMA. Takes Log Analytics workspace as parameter and asks for an option to enable Processes and Dependencies."
+  display_name         = "[Preview]: Enable Azure Monitor for VMs with Azure Monitoring Agent(AMA)"
 }
-

@@ -101,10 +101,3 @@ jobs:
           if: ${{ success() }}
           run: terraform apply -auto-approve
           working-directory: ${{ env.TF_WORKING_DIR }}
-
-        - name: Azure Login
-          uses: azure/login@v1
-          if: ${{ failure() }} || ${{ success() }}
-          with:
-           creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
-           enable-AzPSSession: true
