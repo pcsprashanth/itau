@@ -5,4 +5,3 @@ output "assignment_id" {
 output "gcpvm_assignment_id" {
   value = azurerm_subscription_policy_assignment.cismaf.id
 }
-

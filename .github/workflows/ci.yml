@@ -99,7 +99,7 @@ jobs:
     
         - name: Terraform Apply
           if: ${{ success() }}
-          run: terraform apply
+          run: terraform apply -auto-approve
           working-directory: ${{ env.TF_WORKING_DIR }}
 
         - name: Azure Login
