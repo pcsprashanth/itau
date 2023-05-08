@@ -78,7 +78,6 @@ jobs:
         - name: Find configuration files
           run: |
             find Policy-Assignment -name "*.tf"
-            find Policy-Assignment -name "*.json"
           id: find_files
         - name: Deploy policies
           run: |
