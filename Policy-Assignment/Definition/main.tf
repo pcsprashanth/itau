@@ -18,4 +18,3 @@ resource "azurerm_subscription_policy_assignment" "subnsg" {
   description          = "Protect your subnet from potential threats by restricting access to it with a Network Security Group (NSG). NSGs contain a list of Access Control List (ACL) rules that allow or deny network traffic to your subnet."
   display_name         = "Subnets should be associated with a Network Security Group"
 }
-
