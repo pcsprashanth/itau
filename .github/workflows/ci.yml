@@ -83,7 +83,7 @@ jobs:
           run: |
             terraform init
             terraform validate
-            terraform plan -var-file=variables.tfvars -out=tfplan -input=false -no-color
+            terraform plan 
             terraform apply -input=false -auto-approve
         
         - name: Output find_files result 
