@@ -85,7 +85,9 @@ jobs:
             terraform validate
             terraform plan -var-file=variables.tfvars -out=tfplan -input=false -no-color
             terraform apply -input=false -auto-approve
-          if: steps.find_files.outputs.stdout != ''
+        
+        - name: Output find_files result 
+          run: echo "${{ steps.find_files.outputs.stdout }}"
     # # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     #     - name: Terraform Init
     #       run: terraform init
