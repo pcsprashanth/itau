@@ -49,14 +49,14 @@ on:
     branches: [ "main" ]
   pull_request:
     paths:
-        - "Policy-Assignment/**"
+        - "Policy-Assignment/**/"
 
 jobs:
   build-and-deploy:
       env:
        TF_IN_AUTOMATION: true
        TF_INPUT: false
-       TF_WORKING_DIR: Policy-Assignment/**/
+       TF_WORKING_DIR: Policy-Assignment/**/*
        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
