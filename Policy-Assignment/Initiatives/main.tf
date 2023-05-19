@@ -10,7 +10,7 @@ provider "azurerm" {
   features {}
 }
 data "azurerm_management_group" "example_parent" {
-  name = "itaudev"
+  name = "mg-itaudev"
 }
 resource "azurerm_management_group_policy_assignment" "asb" {
   name                 = "Cloud-BenchMark"
