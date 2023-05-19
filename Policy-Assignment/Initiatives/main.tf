@@ -10,7 +10,7 @@ provider "azurerm" {
   features {}
 }
 data "azurerm_management_group" "example_parent" {
-  name = "mg-itaudev"
+  name = "Landing Zones"
 }
 resource "azurerm_management_group_policy_assignment" "asb" {
   name                 = "Cloud-BenchMark"
